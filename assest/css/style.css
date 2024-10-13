@@ -10,6 +10,10 @@
   clear: both;
 }
 
+.clear {
+  clear: both;
+}
+
 .header {
   height: 180px;
   background-image: linear-gradient(0, #328d44, #42a656);
@@ -481,11 +485,23 @@
 /* content about best sellers items */
 #all-items .listing-items {
   margin-top: 48px;
+  overflow: hidden;
 }
 
-#all-items .page__listing-items {
+#all-items .popular-items {
   float: left;
   width: calc(100% / 4);
+  text-align: center;
+}
+
+#all-items .name-item {
+  font-size: 15px;
+}
+
+#all-items .place-img {
+  width: 250px;
+  margin-top: 15px;
+  border-radius: 5px;
 }
 
 /* hover to the items */
