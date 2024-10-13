@@ -1,0 +1,93 @@
+/* Reset CSS */
+/* This section removes default padding and margin from all elements and sets the box-sizing property to border-box to include padding and border in the element's total width and height. */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* set the font for the whole file respectively */
+:root {
+  --primary-color: #42a656;
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #333;
+  --border-color: #dbdbdb;
+  --star-gold-color: #ffce3e;
+  --navbar-height: 34px;
+  --header-height: 120px;
+  --hover-color: #397946;
+  --header-width-search-height: calc(
+    var(--header-height) - var(--navbar-height)
+  );
+  --header-sort-bar-height: 46px;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+/* set the font for the whole file respectively */
+html {
+  /* 100% equally 1rem = 16px */
+  font-size: 80%;
+  line-height: 1.6rem;
+  font-family: Helvetica, "Roboto", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.grid {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  /* Row class to handle negative margins for columns */
+  margin-left: -8px;
+  margin-right: -8px; /* cannot delete them because will error in PC */
+}
+
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.col {
+  /* Column class to handle floating and padding for columns */
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.col-forth {
+  /* Set width of columns to one-third of the container */
+  width: calc(100% / 2);
+}
+
+.col-full {
+  width: 100%;
+}
+
+.col-half {
+  /* Set width of columns to one-half of the container */
+  width: 50%;
+}
+
+.mt-8 {
+  margin-top: 8px !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.mt-16 {
+  margin-top: 16px !important;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}

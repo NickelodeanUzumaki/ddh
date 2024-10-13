@@ -1,0 +1,494 @@
+.row {
+  /* Row class to handle negative margins for columns */
+  margin-left: -8px;
+  margin-right: -8px; /* cannot delete them because will error in PC */
+}
+
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.header {
+  height: 180px;
+  background-image: linear-gradient(0, #328d44, #42a656);
+  padding: 0;
+  margin: 0;
+}
+
+/* header navbar (for CSS the top text/link) */
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* List style */
+.header__navbar-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 4px 0 0 0;
+  display: flex;
+}
+
+.header__navbar-item {
+  margin: 0 8px;
+  position: relative;
+}
+
+/* navbar first for the right hand side */
+.header__navbar-item,
+.header__navbar-item-link {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: var(--white-color);
+  text-decoration: none;
+  font-weight: 300;
+  padding: 5px;
+}
+
+.header__navbar-icon {
+  color: var(--white-color);
+  text-decoration-line: none;
+}
+
+.header__navbar-item--separate::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-left: 1px solid #ffffff80;
+  height: 20px;
+  right: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Header notification */
+.header__notify {
+  position: absolute;
+  top: 118%;
+  right: 0;
+  width: 404px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--white-color);
+  cursor: default;
+  transform-origin: calc(100% - 40px) top; /* di chuyển cái tâm hiện ra thông báo */
+  animation: headerNotifyGrowth ease-in 0.2s; /* ko phai trinh duyet nao cung support */
+  will-change: opacity, transform;
+  display: none;
+  border-radius: 2px;
+}
+
+/* tạo lớp giả cho mũi tên*/
+.header__notify::before {
+  content: "";
+  border-width: 20px 28px;
+  border-style: solid;
+  border-color: transparent transparent var(--white-color) transparent;
+  position: absolute;
+  right: 4px;
+  top: -26px;
+}
+
+/* tạo lớp giả (bridge) khi di chuột vào thông báo để thông báo nó hiện ra lâu hơn */
+.header__notify::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -16px;
+  width: 90px;
+  height: 20px;
+}
+
+/* animation for the notification */
+@keyframes headerNotifyGrowth {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* make it appear for the noti in the search bar */
+.header__navbar-item--has-notify:hover .header__notify {
+  display: block;
+}
+
+.header__notify-header {
+  height: 40px;
+  background-color: var(--white-color);
+}
+
+.header__notify-header h3 {
+  color: #999;
+  margin: 0 0 0 12px;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 40px;
+  user-select: none;
+}
+
+.header__notify-list {
+  padding-left: 0;
+}
+
+.header__notify-item {
+  display: flex;
+}
+
+.header__notify-item:hover {
+  background-color: #f7f7f7;
+}
+
+.header__notify-item--viewed {
+  background-color: rgba(91, 228, 118, 0.08);
+}
+
+.header__notify-link {
+  display: flex;
+  padding: 12px;
+  width: 100%;
+  text-decoration: none;
+  color: #d3d3d3;
+}
+
+.header__notify-img {
+  width: 48px;
+  object-fit: contain;
+}
+
+.header__notify-info {
+  margin-left: 12px;
+}
+
+.header__notify-name {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--black-color);
+  font-weight: 400;
+}
+
+.header__notify-description {
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #756f6e;
+}
+
+.header__notify-footer {
+  display: flex;
+}
+
+.header__notify-footer-btn {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 8px 0;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* header width search */
+.header-width-search {
+  height: var(--header-width-search-height);
+  display: flex;
+  align-items: center;
+}
+
+/* the image general */
+.header__logo {
+  width: 150px;
+}
+
+/* CSS for the image */
+.header__logo-img {
+  width: 120px;
+  color: var(--white-color);
+  border-radius: 30px;
+  transform: translateX(15px);
+}
+
+/* search bar */
+.header__search {
+  height: 40px;
+  flex: 1;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+}
+
+/* favorite aka like item */
+.header__liked {
+  width: 150px;
+  text-align: center;
+}
+
+/* the like icon in the search bar */
+.header__liked-icon {
+  color: var(--white-color);
+  font-size: 2.4rem;
+  margin-top: 6px;
+}
+
+/* search bar input */
+.header__search-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  padding: 0 16px;
+  border-radius: 2px;
+}
+
+/* search button icon */
+.header__search-btn {
+  background-color: var(--primary-color);
+  border: none;
+  height: 34px;
+  width: 60px;
+  border-radius: 4px;
+  margin-right: 3px;
+  outline: none;
+}
+
+.header__search-btn:hover {
+  cursor: pointer;
+  background-color: #397946;
+}
+
+.header__search-btn-icon {
+  font-size: 1.6rem;
+  color: var(--white-color);
+}
+
+/* header of the navigation */
+.header__nav {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 6px;
+  max-width: 1080px;
+  padding-left: 30px;
+  margin-top: -25px;
+  height: 46px;
+  width: 80%;
+  padding: 0 40px;
+  background-color: #9a6735;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  overflow: hidden;
+}
+
+/* navigation */
+.nav {
+  display: inline-block;
+}
+
+/* Remove default list styles for nav and subnav */
+.nav,
+.subnav {
+  list-style-type: none;
+}
+
+#nav li {
+  /* All nav list items positioned relatively for dropdowns */
+  position: relative;
+}
+
+/* Main nav items displayed inline */
+.nav > li {
+  display: inline-block;
+  position: relative;
+}
+
+/* Uppercase text for main nav links */
+.nav > li > a {
+  text-transform: uppercase;
+}
+
+/* Styling for all nav links */
+.nav li a {
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 46px;
+  padding: 0 24px; /* Adjust spacing between menu items */
+  display: block; /* Block display for clickable area */
+}
+
+.nav li:hover a {
+  color: var(--text-color);
+  background-color: #9f866c;
+}
+
+/* Display subnav on hover of main nav item */
+.nav li:hover .subnav {
+  display: block; /* Show subnav on hover */
+}
+
+/* Change link and background color on hover for subnav and main nav items */
+.nav .subnav li:hover a,
+.nav > li:hover > a {
+  /* later change this color */
+  color: #000;
+  background-color: #ccc;
+}
+
+/* Subnav hidden by default and styled for dropdown */
+.nav .subnav {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
+}
+
+/* Styling for subnav links */
+#nav .subnav a {
+  color: #000;
+  padding: 0 20px;
+  line-height: 38px;
+}
+
+/* slider */
+.slider {
+  position: relative;
+  margin-top: 18px;
+  padding-top: 40%;
+  max-height: 30%;
+  background: url(/assest/img/cover.png) top center / cover no-repeat;
+}
+
+/* center the text and change the color of it (picture)*/
+.slider .text-content {
+  position: absolute;
+  bottom: 48px;
+  color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  text-shadow: 0 0 5px #000;
+}
+
+.slider .text-heading {
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.slider .text-description {
+  font-size: 20px;
+  margin-top: 25px;
+}
+
+/* intro of the shop and best sellers */
+.best_sell-intro {
+  width: 1080px;
+  position: relative;
+  max-width: 100%; /* use when the width is below 800px */
+  padding: 64px 0 112px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  /* Add margin-top to move it down from any element above */
+  margin-top: 480px; /* Adjust as needed */
+}
+
+/* for the about heading intro */
+.section-heading {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-top: 90px;
+  text-align: center;
+  position: relative;
+  letter-spacing: 4px;
+  color: var(--primary-color);
+}
+
+.section-sub-heading {
+  font-size: 15px;
+  text-align: left;
+  margin-top: 180px;
+  font-style: italic;
+  opacity: 0.6;
+  right: 100px;
+  position: relative;
+  left: -338px;
+}
+
+.intro__text {
+  font-size: 1.3rem;
+  margin-top: 25px;
+  text-align: justify;
+  line-height: 1.4rem;
+}
+
+/* popular items */
+.best__sellers {
+  position: relative;
+  margin: 0;
+  border-radius: 6px;
+  margin-top: 25px;
+  margin-left: 0;
+  background: var(--primary-color);
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  height: 46px;
+  right: 15px;
+}
+
+.popular .p-content .tab-wrap {
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 3px 3px 0 0;
+  background: var(--primary-color); /* Keep the background color */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+/* Ensure the text stays on one line */
+.tab-wrap .section-heading-items {
+  font-size: 1.4rem;
+  margin-top: -2px;
+  font-weight: 400;
+  color: var(--white-color);
+  white-space: nowrap; /* Prevent text wrapping */
+  text-transform: uppercase;
+}
+
+/* for the best seller img */
+.best__sellers-img {
+  width: 42px;
+  height: 42px;
+  margin-top: -31px;
+  position: absolute;
+  right: 0;
+}
+
+/* content about best sellers items */
+#all-items .listing-items {
+  margin-top: 48px;
+}
+
+#all-items .page__listing-items {
+  float: left;
+  width: calc(100% / 4);
+}
+
+/* hover to the items */
+.place-img:hover {
+  opacity: 0.6;
+}
