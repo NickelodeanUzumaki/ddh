@@ -64,7 +64,7 @@ html {
 
 .col-forth {
   /* Set width of columns to one-third of the container */
-  width: calc(100% / 2);
+  width: calc(100% / 3);
 }
 
 .col-full {
