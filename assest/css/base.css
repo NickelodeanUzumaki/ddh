@@ -17,6 +17,7 @@
   --navbar-height: 34px;
   --header-height: 120px;
   --hover-color: #397946;
+  --header-nav-color: #9a6735;
   --header-width-search-height: calc(
     var(--header-height) - var(--navbar-height)
   );
@@ -90,4 +91,32 @@ html {
 
 .mt-32 {
   margin-top: 32px;
+}
+
+/* button style */
+.btn {
+  min-width: 124px;
+  height: 34px;
+  text-decoration: none;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  padding: 0 12px;
+  outline: none;
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.6rem;
+}
+
+.btn.btn--normal:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn.btn--primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }

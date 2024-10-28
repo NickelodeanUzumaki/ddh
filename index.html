@@ -58,15 +58,11 @@
                                     </a>
                                 </li>
                             </ul>
-
-                            <footer class="header__notify-footer">
-                                <a href="" class="header__notify-footer-btn">Xem tất cả</a>
-                            </footer>
                         </div>
                     </li>
 
                     <li class="header__navbar-item">
-                        <a href="" class="header__navbar-item-link">
+                        <a href="#get_help" class="header__navbar-item-link">
                             <i class="far fa-question-circle"></i> Trợ Giúp
                         </a>
                     </li>
@@ -89,8 +85,101 @@
                     </button>
                 </div>
 
+                <!-- favorite item -->
                 <div class="header__liked">
-                    <i class="header__liked-icon fa-regular fa-heart"></i>
+                    <div class="header__liked-wrap">
+                        <i class="header__liked-icon fa-regular fa-heart"></i>
+                        <span class="header__cart-notice">3</span>
+                        <!-- noti when hover for best seller of the month -->
+                        <div class="header__cart-list">
+                            <!-- test when no item: header__cart-list--no-cart -->
+                            <img src="/assest/img/best__sellers.png" alt="" class="header__cart-no-cart-img">
+                            <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
+
+                            <!-- when having item: currently using -->
+                            <h4 class="header__cart-heading">Sản Phẩm Yêu Thích</h4>
+                            <ul class="header__cart-list-item">
+                                <!-- cart item -->
+                                <li class="header__cart-item">
+                                    <img src="/assest/img/logo-real.png" alt="" class="header__cart-img">
+                                    <!-- need another div to cover the information -->
+                                    <div class="header__cart-item-info">
+                                        <div class="header__cart-item-head">
+                                            <h5 class="header__cart-item-name">Chút nữa sẽ đổi sau - tên sản phẩm</h5>
+                                            <div class="header__cart-item-price-wrap">
+                                                <span class="header__cart-item-price">100tr</span>
+                                            </div>
+                                        </div>
+                                        <!-- the body of that card -->
+                                        <div class="header__cart-item-body">
+                                            <span class="header__cart-item-description">
+                                                Phan loai: hmmm
+                                            </span>
+
+                                            <!-- change later >> to view the item -->
+                                            <span class="header__cart-item-view">
+                                                Xem
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- 2nd item -->
+                                <li class="header__cart-item">
+                                    <img src="/assest/img/logo-real.png" alt="" class="header__cart-img">
+                                    <!-- need another div to cover the information -->
+                                    <div class="header__cart-item-info">
+                                        <div class="header__cart-item-head">
+                                            <h5 class="header__cart-item-name">Chút nữa sẽ đổi sau - tên sản phẩm</h5>
+                                            <div class="header__cart-item-price-wrap">
+                                                <span class="header__cart-item-price">100tr</span>
+                                            </div>
+                                        </div>
+                                        <!-- the body of that card -->
+                                        <div class="header__cart-item-body">
+                                            <span class="header__cart-item-description">
+                                                Phan loai: hmmm
+                                            </span>
+
+                                            <!-- change later >> to view the item -->
+                                            <span class="header__cart-item-view">
+                                                Xem
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- 3rd item -->
+                                <li class="header__cart-item">
+                                    <img src="/assest/img/logo-real.png" alt="" class="header__cart-img">
+                                    <!-- need another div to cover the information -->
+                                    <div class="header__cart-item-info">
+                                        <div class="header__cart-item-head">
+                                            <h5 class="header__cart-item-name">Chút nữa sẽ đổi sau - tên sản phẩm</h5>
+                                            <div class="header__cart-item-price-wrap">
+                                                <span class="header__cart-item-price">100tr</span>
+                                            </div>
+                                        </div>
+                                        <!-- the body of that card -->
+                                        <div class="header__cart-item-body">
+                                            <span class="header__cart-item-description">
+                                                Phan loai: hmmm
+                                            </span>
+
+                                            <!-- change later >> to view the item -->
+                                            <span class="header__cart-item-view">
+                                                Xem
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <!-- Link shop -->
+                            <a href="https://shopee.vn/duocdieuhan?entryPoint=ShopBySearch&searchKeyword=duoc%20dieu%20han"
+                                class="header__cart-view-cart btn btn--primary" target="_blank">Shopee</a>
+                            <a href="https://www.lazada.vn/shop/duoc-dieu-han/?spm=a2o4n.pdp_revamp.seller.1.478e31fdSpiQIN&itemId=2215644287&channelSource=pdp"
+                                class="anothershop btn btn--primary" target="_blank">Lazada</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -183,7 +272,12 @@
                                 <img src="/assest/img/tenkiu.png" alt="Test" class="place-img">
                                 <h3 class="pic__heading">2</h3>
                                 <p class="name-item">Uzumaki Naruto - main character</p>
-                                <p class="name-description">main character</p>
+                                <p class="name-description">main character "Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
                             </div>
                             <div class="stat-box">
                                 <img src="/assest/img/tenkiu.png" alt="Test" class="place-img">
@@ -242,8 +336,9 @@
                                         </div>
                                         <!-- the send button -->
                                         <div class="submit__btn">
-                                            <input class="contact-submit-btn mt-16 s-col-full s-full-width pull-right"
-                                                type="submit" value="Facebook">
+                                            <a href="https://www.facebook.com/profile.php?id=100038704908959"
+                                                target="_blank"
+                                                class="contact-submit-btn mt-16 s-col-full s-full-width pull-right">Facebook</a>
                                         </div>
                                     </div>
                                 </form>
@@ -258,7 +353,28 @@
                     </div>
                 </div>
 
-                <div id="footer"></div>
+                <div id="get_help">
+                    <h2 class="help__heading">Trợ Giúp</h2>
+                    <span class="help_content">
+                        Chào mọi người, đây là Dược Diệu Hân Shop, điểm đến an toàn cho sức khoẻ của bạn.
+                        Hiện tại shop đang được vận hành trên 2 nền tảng: Shopee & Lazada (chèn link vào). Shop đã được
+                        đi
+                        vào vận hành từ. Chào mọi người, đây là Dược Diệu Hân Shop, điểm đến an toàn cho sức khoẻ của
+                        bạn.
+                        Hiện tại shop đang được vận hành trên 2 nền tảng: Shopee & Lazada (chèn link vào). Shop đã được
+                        đi
+                        vào vận hành từ. Chào mọi người, đây là Dược Diệu Hân Shop, điểm đến an toàn cho sức khoẻ của
+                        bạn.
+                        Hiện tại shop đang được vận hành trên 2 nền tảng: Shopee & Lazada (chèn link vào). Shop đã được
+                        đi
+                        vào vận hành từ
+                    </span>
+                </div>
+
+                <div id="footer">
+                    <p class="copyright"> <i class="fa-regular fa-copyright"></i> Made by Nick Vo with love for mom 2024
+                    </p>
+                </div>
             </div>
         </div>
     </div>
