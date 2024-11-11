@@ -406,6 +406,15 @@
   background-color: #397946 !important;
 }
 
+.see__more {
+  position: relative;
+  justify-content: center;
+  top: 18px;
+  color: var(--header-nav-color);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
 /* cart list */
 .header__cart-list::after {
   content: "";
